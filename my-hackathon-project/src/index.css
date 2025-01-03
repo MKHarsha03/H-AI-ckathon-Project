@@ -1,3 +1,105 @@
-header{
-  color:aqua;
+/* App Container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f6fa; 
+  justify-content: center;
+  align-items: center;
 }
+
+/* Chat Section */
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 90%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff; 
+}
+
+/* Heading */
+.chat-heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4caf50;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.message-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  max-width: 70%; /* Limit the maximum width of the message container */
+}
+
+.message-content {
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  word-wrap: break-word; 
+  border: 1px solid #ccc; /* Add box outline to bot messages */
+  text-align: left; /* Align text to the left */
+}
+
+.message-container.user {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.message-container.user .message-content {
+  background-color: lightblue; /* Set background for user messages */
+}
+
+.message-container.bot .message-content {
+  background-color: lightgreen; /* Set background for bot messages */
+}
+
+/*.message.user {
+}
+
+.message.bot {
+}*/
+
+.bot-logo {
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+/* Chat Input */
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background: #fff;
+}
+
+.chat-input textarea {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  resize: none;
+  border: 1px solid #ccc; /* Add box outline to input textarea */
+  margin-right: 10px;
+}
+
+.chat-input button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
