@@ -1,3 +1,4 @@
+// ChatApp.jsx
 import React, { useState } from 'react';
 import ChatWindow from './ChatWindow';
 import ChatInput from './ChatInput';
@@ -16,12 +17,19 @@ const ChatApp = () => {
     }, 1000);
   };
 
+  const handleResetChat = () => {
+    setMessages([]);
+  };
+
   return (
     <div className="app-container"> 
       <div className="chat-section">
         <h1 className="chat-heading">LAAW AI</h1>
         <ChatWindow messages={messages} />
-        <ChatInput onSendMessage={sendMessage} />
+        <ChatInput 
+          onSendMessage={sendMessage} 
+          onResetChat={handleResetChat} 
+        />
       </div>
     </div>
   );
