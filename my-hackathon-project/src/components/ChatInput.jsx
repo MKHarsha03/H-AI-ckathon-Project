@@ -7,13 +7,12 @@ const ChatInput = ({ onSendMessage, onResetChat }) => {
   const handleKeyDown = (event) => {
     if (event.key === 'Enter' && !event.shiftKey) {
       handleSend();
-      event.preventDefault(); // Prevent default Enter behavior (new line)
+      event.preventDefault();
     }
   };
 
   const handleSend = () => {
     if (text.trim()) {
-      console.log('Sending message:', text);
       onSendMessage(text);
       setText('');
     }
