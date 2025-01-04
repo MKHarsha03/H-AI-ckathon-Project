@@ -1,6 +1,7 @@
+// ChatApp.jsx
 import React, { useState } from 'react';
-import ChatWindow from './chatWindow';
-import ChatInput from './chatInput';
+import ChatWindow from './ChatWindow';
+import ChatInput from './ChatInput';
 import '../index.css';
 
 const ChatApp = () => {
@@ -11,16 +12,24 @@ const ChatApp = () => {
     setMessages([...messages, userMessage]);
 
     setTimeout(() => {
-      const botMessage = { text: `🤖 Copilot says: "${text}"`, sender: 'bot' };
+      const botMessage = { text, sender: 'bot' }; 
       setMessages((prev) => [...prev, botMessage]);
     }, 1000);
   };
 
+  const handleResetChat = () => {
+    setMessages([]);
+  };
+
   return (
-    <div className="app-container">
+    <div className="app-container"> 
       <div className="chat-section">
+        <h1 className="chat-heading">LAAW AI</h1>
         <ChatWindow messages={messages} />
-        <ChatInput onSendMessage={sendMessage} />
+        <ChatInput 
+          onSendMessage={sendMessage} 
+          onResetChat={handleResetChat} 
+        />
       </div>
     </div>
   );
