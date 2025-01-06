@@ -12,7 +12,7 @@ def load_index(index_path):
     return db.as_retriever()
 
 # Retrieve relevant context
-def retrieve_context(retriever, user_message, top_k=2):
+def retrieve_context(retriever, user_message, top_k=5):
     docs = retriever.invoke(user_message)
     context = ""
     for i, doc in enumerate(docs[:top_k]):  # Limit to top_k contexts
